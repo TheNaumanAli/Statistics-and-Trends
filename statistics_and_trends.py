@@ -72,7 +72,7 @@ def plot_categorical_plot(df):
     axs[2].set_title('Pie Chart: Proportion of Customers Purchasing Again')
     #making good layout
     plt.tight_layout()
-    #saving plot as categorical_ploy.png and than showing and after that closing
+    #saving plot as categorical_ploy.png and then showing and after that closing
     plt.savefig('categorical_plot.png')
     plt.show()
     plt.close()
@@ -94,7 +94,7 @@ def plot_statistical_plot(df):
     axs[1].set_xlabel('Purchase Again (0 = No, 1 = Yes)')
     axs[1].set_ylabel('Age (years)')
     axs[1].grid(True)
-    #adjusting the spacing and prventing overlap,saving plot as statistical_plot.png,displaying plot and than closing
+    #adjusting the spacing and prventing overlap,saving plot as statistical_plot.png,displaying plot and then closing
     plt.tight_layout()
     plt.savefig('statistical_plot.png')
     plt.show()
@@ -158,10 +158,11 @@ def main():
     """
        main function to load data, preprocess, generate plots, and perform statistical analysis.
     """
+    #reading the file
     try:
         df = pd.read_csv('data.csv')
     except FileNotFoundError:
-        print("The file 'data.csv' was not found.")
+        print("The file 'data.csv'  not found.")
         return
     df = preprocessing(df)
     # Setting the column for analysing
@@ -170,7 +171,7 @@ def main():
     plot_relational_plot(df)
     plot_statistical_plot(df)
     plot_categorical_plot(df)
-    # performing stats analysiing and writing the results
+    # performing stats analysing and writing the results
     moment = statistical_analysis(df, col)
     writing(moment, col)
     return
